@@ -45,25 +45,14 @@ jobs:
     # Step 1: Set up KinD cluster
     - name: Set up KinD cluster
       uses: helm/kind-action@v1.2.0
-      with:
-        version: v0.24.0  # You can specify any stable version of KinD
-        config: |
-          kind: Cluster
-          apiVersion: kind.x-k8s.io/v1alpha4
-          nodes:
-            - role: control-plane
 
-    # Step 2: Load Docker image into KinD cluster
-    - name: Load Docker image into KinD
-      run: kind load docker-image webapp-flask
-
-    # Step 3: Apply Kubernetes manifests
+    # Step 2: Apply Kubernetes manifests
     - name: Deploy to KinD Kubernetes 
       run: |
         kubectl apply -f deployment.yaml
         kubectl apply -f service.yaml
 
-    # Step 4: Verify that the application is running
+    # Step 3: Verify that the application is running
     - name: Verify Application Pods
       run: |
         kubectl get pods
@@ -74,7 +63,7 @@ jobs:
       run: |
         kubectl port-forward service/webapp-service 8080:8080 &
     
-    # Step 5: Test if the service is accessible
+    # Step 6: Test if the service is accessible
     - name: Test service access
       run: |
         curl http://localhost:8080
