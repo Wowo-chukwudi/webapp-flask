@@ -42,6 +42,8 @@ jobs:
     needs: test  # Ensure deploy runs after the build
 
     steps:
+    - name: Checkout code repository
+      uses: actions/checkout@v4
     # Step 1: Set up KinD cluster
     - name: Set up KinD cluster
       uses: helm/kind-action@v1.2.0
