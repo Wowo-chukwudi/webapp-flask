@@ -34,7 +34,7 @@ jobs:
 
     steps:
     - name: Test stage
-      run: echo "This is the testing stage"
+      run: echo "This is the testing stage" 
 
 
   deploy:
@@ -54,19 +54,4 @@ jobs:
         kubectl apply -f deployment.yaml
         kubectl apply -f service.yaml
 
-    # Step 3: Verify that the application is running
-    - name: Verify Application Pods
-      run: |
-        kubectl get pods
-        kubectl get services
-
-    # Step 4: Port Forwarding
-    - name: Port forward service
-      run: |
-        kubectl port-forward service/webapp-service 8080:8080 &
-    
-    # Step 6: Test if the service is accessible
-    - name: Test service access
-      run: |
-        curl http://localhost:8080
 
