@@ -1,0 +1,21 @@
+#K8s manifest for deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: devchukwudi/webapp-flask:latest
+        ports:
+        - containerPort: 8080
