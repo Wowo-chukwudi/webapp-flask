@@ -1,4 +1,4 @@
-name: Webapp CI/CD Pipeline with KinD
+name: Flask Webapp CI/CD Pipeline with KinD
 
 on:
   push:
