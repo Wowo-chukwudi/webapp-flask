@@ -48,9 +48,6 @@ jobs:
     - name: Set up KinD cluster
       uses: helm/kind-action@v1.2.0
 
-    - name: Load Webapp flask image into KinD
-      run: kind load docker-image devchukwudi/webapp-flask:latest
-
     # Step 2: Apply Kubernetes manifests
     - name: Deploy to KinD Kubernetes 
       run: |
