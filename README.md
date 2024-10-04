@@ -49,7 +49,7 @@ http://localhost:8080
 
 ## 2. Project Summary
 **About the API**:
-The API is a simple Flask web application that serves basic HTTP requests. It has a root route (/) that responds with a "Hello, World!" message. The API can be extended to include additional routes and functionality as required.
+The API is a simple Flask web application that serves basic HTTP requests. It has a root route (/) that responds with a "Welcome!" message. The API can be extended to include additional routes and functionality as required.
   - **Base URL: http://localhost:8080**
   - **Endpoint: / (GET)**
 
