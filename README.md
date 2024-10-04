@@ -89,5 +89,6 @@ The API is deployed on a Kubernetes cluster running in Docker (KinD) using the p
  The following basic security measures have been implemented to ensure the safety and integrity of the application:
 
   1. Non-root User: The Flask app runs as a non-root user inside the container to prevent privilege escalation.
-  2. Minimal Base Image: The application uses an Alpine-based image to minimize its attack surface.
-  3. Secrets Management: Sensitive data, such as Docker login credentials are not hard-coded and displayed to be seen but are stored in the repo secrets
+  2. Use of Official Base Image: Official Docker image as base image because it is already verified and built with the best practices
+  3. Minimal Base Image: The application uses an Alpine-based image to minimize its attack surface. Full blown OS distributions like Ubuntu have a lot of tools already packaged in and not only would that make the image size very large, it would also create a larger attack surface which introduces security issues from the beginning. Leaner OS distributions like Alpine come bundled with only necessary utilities thereby minimizing attack surface.
+  4. Secrets Management: Sensitive data, such as Docker login credentials are not hard-coded/displayed but are stored in the repo secrets as an repository variable
