@@ -62,11 +62,11 @@ The API was containerized using Docker, enabling it to run consistently across d
   - Entrypoint: The Flask application runs on 0.0.0.0:8080, making it accessible from any network interface inside the container.
 
 **CI/CD Process:**
-The CI/CD pipeline is set up using GitHub Actions, which automates the building, testing, and deployment process with the following stages on every push or pull request made to the master branch:
+The CI/CD pipeline is set up using GitHub Actions, which automates the building, testing, and deployment process with the following jobs/stages on every push or pull request made to the master branch:
 
   - Build: Builds the Docker image and pushes it to Docker Hub.
   - Test: Placeholder for future test automation.
-  - Deploy: After successful build, a KinD cluster is created. The Kubernetes manifests (deployment.yaml and service.yaml) are then applied to deploy the application application to a Kubernetes cluster (KinD)
+  - Deploy: After successful build and test jobs, a KinD cluster is created. The Kubernetes manifests (deployment.yaml and service.yaml) are then applied to deploy the application to the KinD Kubernetes cluster
   - Verification: For the final step, the pipeline verifies that the pods have been created.
 
 **Deploying the API to Kubernetes:**
