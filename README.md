@@ -1,6 +1,6 @@
 # Deploying a Secure Flask WebApp Project with Github Actions 
 
-This is a simple Flask web application that displays "Hello, World!" It is containerized using Docker, deployed on a KinD Kubernetes cluster, and integrated with a CI/CD pipeline using GitHub Actions to automate the build, test, and deployment processes.
+This is a simple Flask web application that displays "Welcome!" It is containerized using Docker, deployed on a KinD Kubernetes cluster, and integrated with a CI/CD pipeline using GitHub Actions to automate the build, test, and deployment processes.
 
 ---
 
@@ -66,7 +66,7 @@ The CI/CD pipeline is set up using GitHub Actions, which automates the building,
 
   - Build: Builds the Docker image and pushes it to Docker Hub.
   - Test: Placeholder for future test automation.
-  - Deploy: After successful builds, the pipeline deploys the application to a Kubernetes cluster (KinD) and the Kubernetes manifests (deployment.yaml and service.yaml) are applied to deploy the application.
+  - Deploy: After successful build, a KinD cluster is created. The Kubernetes manifests (deployment.yaml and service.yaml) are then applied to deploy the application application to a Kubernetes cluster (KinD)
   - Verification: For the final step, the pipeline verifies that the pods have been created.
 
 **Deploying the API to Kubernetes:**
